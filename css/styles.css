@@ -280,3 +280,9 @@ form p span {
     display: none;
   }
 }
+
+@media (max-width: 500px) {
+  #freeTrySeccion {
+    padding: 35px 0;
+  }
+}
