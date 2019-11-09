@@ -22,18 +22,26 @@ main section {
 
 main section:nth-of-type(1) {
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
 main section:nth-of-type(1) h1 {
   font-size: 3em;
   margin-bottom: 21px;
+  position: relative;
+  z-index: -2;
 }
 
-#freeTry {
+#freeTrySeccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: hsl(248, 32%, 49%);
   border: none;
   height: 7vh;
+  font-weight: 400;
   border-radius: 5px;
   margin-bottom: 25px;
   color: white;
@@ -52,6 +60,8 @@ form {
   padding: 25px;
   background-color: white;
   border-radius: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .grupoLI {
@@ -86,9 +96,40 @@ form {
   border-color: hsl(246, 25%, 77%);
 }
 
+.inputYCorreccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputYCorreccion div.imagen {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-image: url("../images/_uestionmark_encircled.svg");
+  background-size: contain;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: -1;
+  transition: 0.2s;
+}
+
+/* .inputCorrecto {
+  background-image: url("../images/Tick_Mark_Dark-512.png") !important;
+  transform: rotateY(360deg);
+} */
+
 .inputSeleccionado {
   transform: translateY(-90%);
   font-size: 0.7em !important;
+}
+
+.inputValido {
+  border-color: hsl(154, 59%, 51%) !important;
+}
+
+.inputInvalido {
+  border-color: hsl(0, 100%, 74%) !important;
 }
 
 form button {
@@ -100,6 +141,13 @@ form button {
   border-bottom: 2px solid hsl(154, 59%, 40%);
   border-radius: 5px;
   height: 7vh;
+  cursor: pointer;
+}
+
+.formularioIncompleto {
+  pointer-events: none;
+  background-color: hsl(152, 16%, 74%) !important;
+  border-bottom: 2px solid hsl(153, 8%, 56%);
 }
 
 form p {
@@ -112,4 +160,28 @@ form p {
 form p span {
   color: hsl(0, 100%, 74%);
   font-weight: 700;
+}
+
+/** MEDIA QUERYS **/
+
+@media (max-width: 930px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 0.7fr;
+    grid-column-gap: 20px;
+    height: auto;
+  }
+
+  .grupoLI input {
+    width: 100%;
+  }
+
+  main section:nth-of-type(1) {
+    text-align: center;
+  }
+
+  main section:nth-of-type(2) {
+    margin-bottom: 10%;
+  }
 }
