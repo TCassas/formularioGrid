@@ -108,3 +108,7 @@ input4.addEventListener('blur', (e) => {
     input4.classList.add("inputInvalido");
   }
 });
+
+boton.addEventListener('submit', (e) => {
+  alert("uwu!");
+});
